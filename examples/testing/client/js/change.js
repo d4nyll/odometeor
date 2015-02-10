@@ -1,4 +1,4 @@
-Template.main.rendered = function () {
+var randomChange = function () {
 	Meteor.setTimeout(function () {
 		$('.odometeor').html(845);
 	}, 4000);
@@ -8,4 +8,12 @@ Template.main.rendered = function () {
 	Meteor.setInterval(function () {
 		$('.odometeor').html(~~(Math.random()*1000));
 	}, 4000);
+}
+
+Template.main.rendered = function () {
+	randomChange();
+}
+
+Template.theme.rendered = function () {
+	randomChange();
 }
