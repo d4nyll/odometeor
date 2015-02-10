@@ -5,3 +5,7 @@ Router.route('/', function () {
 Router.route('/theme/', function () {
   this.render('theme');
 });
+
+Router.route('/api/', function () {
+  this.render('api');
+});

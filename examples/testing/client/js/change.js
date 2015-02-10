@@ -1,4 +1,4 @@
-var randomChange = function () {
+randomChange = function () {
 	Meteor.setTimeout(function () {
 		$('.odometeor').html(845);
 	}, 4000);
