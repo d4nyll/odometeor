@@ -34,13 +34,12 @@ var MergeRecursive = function (obj1, obj2) {
 	return obj1;
 }
 
-var opts = {};
+var opts = {theme: 'digital'};
 
 Template.odometeor.rendered = function () {
 	var params = this.data;
 	var el = this.find('.odometeor');
 	opts.el = el;
-	opts.theme = 'digital';
 	
 	// {{> odometeor "abc"}} - string
 	if(typeof params == 'string') {
@@ -80,3 +79,23 @@ Template.odometeor.rendered = function () {
 	od = new Odometer(opts);
 	Odometeor.odometeorInstances.push(od);
 }
+
+Odometeor.create = function(id, beforeId, options) {
+	// Creates the div element to render odometeor
+	var odoelement = document.createElement("div");
+	var textnode = document.createTextNode(options.value);
+	odoelement.appendChild(textnode);
+	odoelement.id = id;
+	odoelement.className += ' odometeor';
+	var beforeElement = document.getElementById(beforeId);
+	beforeElement.parentNode.insertBefore(odoelement, beforeElement);
+
+	// Adds any user-defined options
+	options = MergeRecursive(options, opts);
+	options.el = odoelement;
+
+	// Loads the odometer
+	var odometeor = new Odometer(options);
+	Odometeor.odometeorInstances.push(odometeor);
+	return odometeor;
+};

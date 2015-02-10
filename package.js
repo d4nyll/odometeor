@@ -1,7 +1,7 @@
 Package.describe({
   name: 'd4nyll:odometeor',
   summary: 'A wrapper for odometer by HupSpot',
-  version: '0.1.0',
+  version: '0.2.0',
   git: 'https://github.com/d4nyll/odometeor.git'
 });
 
