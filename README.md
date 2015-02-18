@@ -1,4 +1,6 @@
 # odometeor
+
+[![Join the chat at https://gitter.im/d4nyll/odometeor](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/d4nyll/odometeor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A wrapper for [odometer](http://github.hubspot.com/odometer/) by [HubSpot](http://www.hubspot.com/).
 
 ## Demo
